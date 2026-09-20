@@ -35,7 +35,7 @@ CODE=$(curl -sS -o /tmp/admin-points-v11.json -w '%{http_code}' -b "$COOKIE" -H 
 python3 - <<'PY'
 import json
 x=json.load(open('/tmp/admin-points-v11.json'))
-assert x['error']=='BROADCASTER_EXCLUDED', x
+assert x['error']=='STAFF_EXCLUDED', x
 print('OK broadcaster: manual points rejected')
 PY
 
