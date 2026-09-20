@@ -1,8 +1,8 @@
-# SOVARA GIFT v1.5.4
+# SOVARA GIFT v1.5.5
 
 Production package for `gift.sovara.ru`.
 
-## v1.5.4
+## v1.5.5
 - Approved tabbed admin layout: Users / Giveaway / Points / System / Audit.
 - Admin user list has search, filters and pagination for large participant counts.
 - Audit log no longer has its own forced scrollbar; events expand with “Show more”.
