@@ -9,7 +9,7 @@ let WebSocket;
 try { WebSocket = require('ws'); } catch { WebSocket = null; }
 
 const ROOT = __dirname;
-const APP_VERSION='1.3.2';
+const APP_VERSION='1.3.3';
 const PUBLIC = path.join(ROOT, 'public');
 const DATA = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(ROOT, 'data');
 fs.mkdirSync(DATA,{recursive:true});
@@ -232,5 +232,5 @@ async function api(req,res,u){
 }
 
 const server=http.createServer(async(req,res)=>{try{const u=new URL(req.url,'http://localhost');if(u.pathname==='/auth/callback'&&(u.searchParams.has('code')||u.searchParams.has('error')))return await handleAdminCodeCallback(req,res,u);if(u.pathname.startsWith('/api/'))return await api(req,res,u);staticFile(req,res,u.pathname);}catch(e){console.error(e);if(!res.headersSent)sendJson(res,500,{error:'INTERNAL',message:e.message});else res.end();}});
-const config=loadConfig();const listenPort=Number(process.env.PORT||config.port)||4177;const listenHost=process.env.HOST||'0.0.0.0';server.listen(listenPort,listenHost,async()=>{console.log('\n  SOVARA Giveaway Web v1.3.2');console.log(`  Listening on ${listenHost}:${listenPort}`);console.log('');if(!WebSocket)console.log('  ⚠ Модуль ws не установлен: Twitch EventSub чат отключён. Запусти npm install.');if(!config.clientId)console.log('  Twitch Client ID пока не настроен — открой сайт и нажми «⚙ Twitch».');else console.log(`  Twitch OAuth: ${config.authMode} / Client ID ${config.clientId.slice(0,5)}…`);try{const restored=await restoreAdminRuntime();console.log(restored?'  Twitch-службы: восстановлены автоматически':'  Twitch-службы: сохранённой авторизации нет или её надо переподключить');}catch(e){console.log('  Twitch-службы: '+e.message);}console.log('  Для остановки: Ctrl+C\n');});
+const config=loadConfig();const listenPort=Number(process.env.PORT||config.port)||4177;const listenHost=process.env.HOST||'0.0.0.0';server.listen(listenPort,listenHost,async()=>{console.log('\n  SOVARA Giveaway Web v1.3.3');console.log(`  Listening on ${listenHost}:${listenPort}`);console.log('');if(!WebSocket)console.log('  ⚠ Модуль ws не установлен: Twitch EventSub чат отключён. Запусти npm install.');if(!config.clientId)console.log('  Twitch Client ID пока не настроен — открой сайт и нажми «⚙ Twitch».');else console.log(`  Twitch OAuth: ${config.authMode} / Client ID ${config.clientId.slice(0,5)}…`);try{const restored=await restoreAdminRuntime();console.log(restored?'  Twitch-службы: восстановлены автоматически':'  Twitch-службы: сохранённой авторизации нет или её надо переподключить');}catch(e){console.log('  Twitch-службы: '+e.message);}console.log('  Для остановки: Ctrl+C\n');});
 startBackupLoop();

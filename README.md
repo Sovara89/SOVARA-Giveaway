@@ -1,4 +1,4 @@
-# SOVARA Giveaway v1.3.2
+# SOVARA Giveaway v1.3.3
 
 Production web app for recurring SOVARA Twitch giveaways.
 
@@ -70,3 +70,10 @@ Production web app for recurring SOVARA Twitch giveaways.
 - Twitch service status refresh now reloads the existing admin endpoint instead of depending on a dedicated runtime endpoint.
 - Added compatibility aliases for Twitch runtime checks.
 - `/api/status` and runtime responses expose `appVersion` for deployment diagnostics.
+
+
+## v1.3.3
+- Repacked full public assets to prevent partial-deploy mismatch.
+- Unique gift favicon asset `gift-icon-v133.png`.
+- Admin Twitch connect uses Authorization Code route `/api/admin/auth/code/start`.
+- Refresh Twitch status reloads admin data instead of calling legacy runtime route.
