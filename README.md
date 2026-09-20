@@ -1,18 +1,19 @@
-# SOVARA Giveaway
+# SOVARA Giveaway v1.0
 
-SOVARA Twitch giveaway web app.
+Production web app for recurring SOVARA Twitch giveaways.
 
-## Railway
+## VPS runtime
 
-Runtime settings:
-- `NODE_ENV=production`
-- `DATA_DIR=/data` when a persistent volume is mounted at `/data`
-- `TWITCH_CLIENT_ID` — Twitch application Client ID
-- `TWITCH_AUTH_MODE=device`
-- `TWITCH_LOGIN_SCOPES=user:read:chat moderator:read:chatters`
-- `ADMIN_TWITCH_LOGIN=sovara_`
-- `PUBLIC_BASE_URL=https://<your-domain>` once a public domain is assigned
+- Node.js 18+
+- Nginx reverse proxy
+- systemd service: `sovara-giveaway`
+- persistent data: `/var/lib/sovara-giveaway`
+- app code: `/opt/sovara-giveaway`
+- public URL: `https://gift.sovara.ru`
 
-Start command: `npm start`. Railway injects `PORT` automatically.
+## v1.0
 
-Production disables the local demo-admin and web setup endpoints.
+- Public giveaway archive with round statistics and winner prize type.
+- Public archive never returns private winner profile/contact/payment fields.
+- Admin can delete completed test rounds from the archive.
+- Recurring round lifecycle from v0.9 remains: 10 participants -> 30 days -> draw -> prize delivered -> complete -> new round.

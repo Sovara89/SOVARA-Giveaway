@@ -1,6 +1,7 @@
 {
-  "version": 5,
+  "version": 7,
   "giveaway": {
+    "roundNumber": 1,
     "title": "SOVARA Giveaway",
     "prizeRub": 5000,
     "ticketCost": 300,
@@ -9,8 +10,12 @@
     "durationDays": 30,
     "startedAt": null,
     "endsAt": null,
-    "winner": null
+    "winner": null,
+    "prizeDeliveredAt": null,
+    "completedAt": null,
+    "archivedAt": null
   },
+  "giveawayHistory": [],
   "settings": {
     "pointsPerMinute": 1,
     "pointsPerMessage": 1,
