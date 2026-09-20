@@ -1,4 +1,4 @@
-# SOVARA Giveaway v1.3
+# SOVARA Giveaway v1.3.1
 
 Production web app for recurring SOVARA Twitch giveaways.
 
@@ -54,3 +54,9 @@ Production web app for recurring SOVARA Twitch giveaways.
 - `TWITCH_CLIENT_SECRET` stays only in `/etc/sovara-giveaway.env`.
 - OAuth token file stays in `DATA_DIR/twitch-admin-auth.json`, outside GitHub.
 - EventSub/watchtime restore automatically after app or VPS restart.
+
+
+## v1.3.1
+- Replaced the old SVG favicon with the selected blue gift / orange bow icon.
+- Added PNG, ICO and Apple touch icon references with cache-busting query strings.
+- Removed the obsolete owl SVG favicon so browsers cannot prefer it.
