@@ -1,34 +1,23 @@
-# SOVARA GIFT v1.5.3
+# SOVARA GIFT v1.5.4
 
-Production build for `https://gift.sovara.ru`.
+Production package for `gift.sovara.ru`.
 
-## v1.5 FINAL POLISH
-- Viewer/admin website sessions survive Node/systemd restarts (7-day cookie lifetime).
-- Human-readable frontend errors for auth, admin, backup and giveaway actions.
-- Admin audit log is visible in the admin panel.
-- Daily/manual backups plus owner-only download and restore; restore creates a safety backup first.
-- Owner-only global emergency pause freezes chat, watchtime and manual point awards.
-- Next-round settings in the admin UI: prize, ticket cost, ticket cap, minimum participants and duration.
-- System status block: app version, uptime, active sessions, Twitch auth, EventSub and latest backup.
-- Existing persistent Twitch service authorization, anti-spam cooldown, test rounds, additional admins and archive remain intact.
+## v1.5.4
+- Approved tabbed admin layout: Users / Giveaway / Points / System / Audit.
+- Admin user list has search, filters and pagination for large participant counts.
+- Audit log no longer has its own forced scrollbar; events expand with “Show more”.
+- Steam game and in-game donation terms appear only when those prize types are selected.
+- Steam game / in-game donation require explicit terms acceptance before profile save; backend enforces the same rule.
+- Steam balance and Ozon do not require a terms checkbox.
+- Prize choice can be changed while profile editing is open for the round.
+- Partial profile saving from v1.5.2 remains supported for ordinary fields; restricted prize types require terms acceptance.
+- Version output is unified across package, API and startup log.
 
-## Production layout
-The release intentionally contains only five files:
-- `.gitignore`
-- `README.md`
+## Production files
+- `server.js`
 - `index.html`
 - `package.json`
-- `server.js`
+- `.gitignore`
+- `README.md`
 
-Runtime data, sessions, backups and Twitch secrets stay outside GitHub in `/var/lib/sovara-giveaway` and `/etc/sovara-giveaway.env`.
-
-
-## v1.5.3
-- Profile fields can be saved partially. Contacts no longer require complete prize details.
-- Giveaway eligibility still requires a complete profile.
-
-
-## v1.5.3
-- Clear prize fulfillment terms in the viewer cabinet.
-- Steam game: one game up to the prize limit; unused remainder is not compensated.
-- In-game donation: one standard package up to the prize limit; packages are not combined to exhaust the remainder.
+Runtime state, backups, sessions and Twitch credentials remain outside GitHub on the VPS.
