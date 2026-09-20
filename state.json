@@ -1,0 +1,35 @@
+{
+  "version": 9,
+  "giveaway": {
+    "roundNumber": 1,
+    "title": "SOVARA Giveaway",
+    "prizeRub": 5000,
+    "ticketCost": 300,
+    "maxTickets": 10,
+    "minParticipants": 10,
+    "durationDays": 30,
+    "startedAt": null,
+    "endsAt": null,
+    "winner": null,
+    "prizeDeliveredAt": null,
+    "completedAt": null,
+    "archivedAt": null,
+    "isTest": false,
+    "testDurationMinutes": null,
+    "testRestore": null
+  },
+  "giveawayHistory": [],
+  "settings": {
+    "pointsPerMinute": 1,
+    "pointsPerMessage": 1,
+    "watchtimePollMinutes": 5,
+    "messagePointsEnabled": true,
+    "watchtimePointsEnabled": true,
+    "countMessagesOffline": false,
+    "chatCooldownSeconds": 30
+  },
+  "users": {},
+  "processedMessages": {},
+  "audit": [],
+  "admins": []
+}

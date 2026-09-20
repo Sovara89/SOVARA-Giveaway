@@ -1,4 +1,4 @@
-# SOVARA Giveaway v1.2
+# SOVARA Giveaway v1.3
 
 Production web app for recurring SOVARA Twitch giveaways.
 
@@ -33,3 +33,24 @@ Production web app for recurring SOVARA Twitch giveaways.
 - Owner and delegated admins are excluded from giveaway points/tickets/winner pool.
 - Header brand is non-selectable and uses a new owl favicon.
 - Header includes a Twitch return button with LIVE/OFFLINE state when Twitch services are connected.
+
+
+## v1.2.1
+
+- Replaced the site favicon and header mark with the selected blue gift / orange ribbon artwork.
+- PNG + ICO favicon variants with cache-busting URL.
+
+
+## v1.3
+
+- Admin action log with actor identity.
+- Configurable Twitch chat anti-spam cooldown (default 30 seconds).
+- Safe test rounds with real-round progress restoration and no public archive entry.
+- Automatic local backups plus manual backup button; last 30 copies are retained.
+
+## v1.3 Twitch persistence
+
+- Persistent Twitch service auth using Authorization Code + refresh token.
+- `TWITCH_CLIENT_SECRET` stays only in `/etc/sovara-giveaway.env`.
+- OAuth token file stays in `DATA_DIR/twitch-admin-auth.json`, outside GitHub.
+- EventSub/watchtime restore automatically after app or VPS restart.
