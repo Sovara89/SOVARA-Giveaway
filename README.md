@@ -1,4 +1,4 @@
-# SOVARA Giveaway v1.3.1
+# SOVARA Giveaway v1.3.2
 
 Production web app for recurring SOVARA Twitch giveaways.
 
@@ -60,3 +60,13 @@ Production web app for recurring SOVARA Twitch giveaways.
 - Replaced the old SVG favicon with the selected blue gift / orange bow icon.
 - Added PNG, ICO and Apple touch icon references with cache-busting query strings.
 - Removed the obsolete owl SVG favicon so browsers cannot prefer it.
+
+
+## v1.3.2
+
+- Replaced every favicon path with the selected blue/orange gift icon.
+- Added unique `/gift-icon-v132.png` cache-busting icon path.
+- Replaced legacy `favicon.svg` owl with a gift fallback.
+- Twitch service status refresh now reloads the existing admin endpoint instead of depending on a dedicated runtime endpoint.
+- Added compatibility aliases for Twitch runtime checks.
+- `/api/status` and runtime responses expose `appVersion` for deployment diagnostics.
