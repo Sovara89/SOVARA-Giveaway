@@ -1,0 +1,25 @@
+{
+  "version": 5,
+  "giveaway": {
+    "title": "SOVARA Giveaway",
+    "prizeRub": 5000,
+    "ticketCost": 300,
+    "maxTickets": 10,
+    "minParticipants": 10,
+    "durationDays": 30,
+    "startedAt": null,
+    "endsAt": null,
+    "winner": null
+  },
+  "settings": {
+    "pointsPerMinute": 1,
+    "pointsPerMessage": 1,
+    "watchtimePollMinutes": 5,
+    "messagePointsEnabled": true,
+    "watchtimePointsEnabled": true,
+    "countMessagesOffline": false
+  },
+  "users": {},
+  "processedMessages": {},
+  "audit": []
+}

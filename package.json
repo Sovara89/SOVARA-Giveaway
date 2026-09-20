@@ -1,0 +1,15 @@
+{
+  "name": "sovara-giveaway-web-prototype",
+  "version": "0.7.0",
+  "private": true,
+  "description": "Local SOVARA Giveaway prototype with Twitch auth, EventSub chat, watchtime and admin tools",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --check server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.3"
+  },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,9 @@
+{
+  "clientId": "",
+  "authMode": "device",
+  "loginScopes": "user:read:chat moderator:read:chatters",
+  "adminTwitchLogin": "sovara_",
+  "adminTwitchUserId": "",
+  "port": 4177,
+  "publicBaseUrl": ""
+}
