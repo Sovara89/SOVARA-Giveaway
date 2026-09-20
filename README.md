@@ -1,79 +1,14 @@
-# SOVARA Giveaway v1.3.3
+# SOVARA Giveaway v1.4.0
 
-Production web app for recurring SOVARA Twitch giveaways.
+Clean production package for `gift.sovara.ru`.
 
-## VPS runtime
+Only the current application files are kept in the repository. Runtime state and Twitch secrets stay on the VPS outside GitHub.
 
-- Node.js 18+
-- Nginx reverse proxy
-- systemd service: `sovara-giveaway`
-- persistent data: `/var/lib/sovara-giveaway`
-- app code: `/opt/sovara-giveaway`
-- public URL: `https://gift.sovara.ru`
+## Files
+- `server.js` — backend and Twitch integration
+- `index.html` — frontend
+- `package.json` — Node.js dependencies
+- `.gitignore` — ignores runtime/secrets
+- `README.md` — this file
 
-## v1.0
-
-- Public giveaway archive with round statistics and winner prize type.
-- Public archive never returns private winner profile/contact/payment fields.
-- Admin can delete completed test rounds from the archive.
-- Recurring round lifecycle from v0.9 remains: 10 participants -> 30 days -> draw -> prize delivered -> complete -> new round.
-
-
-## v1.1
-- Broadcaster/admin account is excluded from points, tickets, participants and winner pool.
-- Viewer Twitch login requests only `openid`.
-- Admin Twitch service authorization is separate and requests `user:read:chat moderator:read:chatters`.
-- Admin UI has a Connect/Reconnect Twitch services button.
-- Points inputs are wider in admin UI.
-
-
-## v1.2
-- Owner can add/remove delegated site administrators by Twitch login.
-- Delegated admins can operate giveaways, points, bans and participant data, but cannot manage admins or reconnect Twitch service scopes.
-- Owner and delegated admins are excluded from giveaway points/tickets/winner pool.
-- Header brand is non-selectable and uses a new owl favicon.
-- Header includes a Twitch return button with LIVE/OFFLINE state when Twitch services are connected.
-
-
-## v1.2.1
-
-- Replaced the site favicon and header mark with the selected blue gift / orange ribbon artwork.
-- PNG + ICO favicon variants with cache-busting URL.
-
-
-## v1.3
-
-- Admin action log with actor identity.
-- Configurable Twitch chat anti-spam cooldown (default 30 seconds).
-- Safe test rounds with real-round progress restoration and no public archive entry.
-- Automatic local backups plus manual backup button; last 30 copies are retained.
-
-## v1.3 Twitch persistence
-
-- Persistent Twitch service auth using Authorization Code + refresh token.
-- `TWITCH_CLIENT_SECRET` stays only in `/etc/sovara-giveaway.env`.
-- OAuth token file stays in `DATA_DIR/twitch-admin-auth.json`, outside GitHub.
-- EventSub/watchtime restore automatically after app or VPS restart.
-
-
-## v1.3.1
-- Replaced the old SVG favicon with the selected blue gift / orange bow icon.
-- Added PNG, ICO and Apple touch icon references with cache-busting query strings.
-- Removed the obsolete owl SVG favicon so browsers cannot prefer it.
-
-
-## v1.3.2
-
-- Replaced every favicon path with the selected blue/orange gift icon.
-- Added unique `/gift-icon-v132.png` cache-busting icon path.
-- Replaced legacy `favicon.svg` owl with a gift fallback.
-- Twitch service status refresh now reloads the existing admin endpoint instead of depending on a dedicated runtime endpoint.
-- Added compatibility aliases for Twitch runtime checks.
-- `/api/status` and runtime responses expose `appVersion` for deployment diagnostics.
-
-
-## v1.3.3
-- Repacked full public assets to prevent partial-deploy mismatch.
-- Unique gift favicon asset `gift-icon-v133.png`.
-- Admin Twitch connect uses Authorization Code route `/api/admin/auth/code/start`.
-- Refresh Twitch status reloads admin data instead of calling legacy runtime route.
+The selected gift icon is embedded in `server.js`; there are no separate favicon/image files to upload into the wrong directory.
