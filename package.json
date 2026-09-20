@@ -1,8 +1,8 @@
 {
-  "name": "sovara-giveaway-web-prototype",
-  "version": "1.4.0",
+  "name": "sovara-gift",
+  "version": "1.5.0",
   "private": true,
-  "description": "SOVARA Giveaway production web app with Twitch auth, recurring giveaway lifecycle, EventSub chat and watchtime",
+  "description": "SOVARA GIFT production web app with persistent sessions, admin audit, backups, round controls, EventSub chat and watchtime",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

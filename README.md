@@ -1,14 +1,23 @@
-# SOVARA Giveaway v1.4.0
+# SOVARA GIFT v1.5.0
 
-Clean production package for `gift.sovara.ru`.
+Production build for `https://gift.sovara.ru`.
 
-Only the current application files are kept in the repository. Runtime state and Twitch secrets stay on the VPS outside GitHub.
+## v1.5 FINAL POLISH
+- Viewer/admin website sessions survive Node/systemd restarts (7-day cookie lifetime).
+- Human-readable frontend errors for auth, admin, backup and giveaway actions.
+- Admin audit log is visible in the admin panel.
+- Daily/manual backups plus owner-only download and restore; restore creates a safety backup first.
+- Owner-only global emergency pause freezes chat, watchtime and manual point awards.
+- Next-round settings in the admin UI: prize, ticket cost, ticket cap, minimum participants and duration.
+- System status block: app version, uptime, active sessions, Twitch auth, EventSub and latest backup.
+- Existing persistent Twitch service authorization, anti-spam cooldown, test rounds, additional admins and archive remain intact.
 
-## Files
-- `server.js` — backend and Twitch integration
-- `index.html` — frontend
-- `package.json` — Node.js dependencies
-- `.gitignore` — ignores runtime/secrets
-- `README.md` — this file
+## Production layout
+The release intentionally contains only five files:
+- `.gitignore`
+- `README.md`
+- `index.html`
+- `package.json`
+- `server.js`
 
-The selected gift icon is embedded in `server.js`; there are no separate favicon/image files to upload into the wrong directory.
+Runtime data, sessions, backups and Twitch secrets stay outside GitHub in `/var/lib/sovara-giveaway` and `/etc/sovara-giveaway.env`.
