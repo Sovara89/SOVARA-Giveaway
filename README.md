@@ -1,4 +1,4 @@
-# SOVARA GIFT v1.5.0
+# SOVARA GIFT v1.5.3
 
 Production build for `https://gift.sovara.ru`.
 
@@ -21,3 +21,14 @@ The release intentionally contains only five files:
 - `server.js`
 
 Runtime data, sessions, backups and Twitch secrets stay outside GitHub in `/var/lib/sovara-giveaway` and `/etc/sovara-giveaway.env`.
+
+
+## v1.5.3
+- Profile fields can be saved partially. Contacts no longer require complete prize details.
+- Giveaway eligibility still requires a complete profile.
+
+
+## v1.5.3
+- Clear prize fulfillment terms in the viewer cabinet.
+- Steam game: one game up to the prize limit; unused remainder is not compensated.
+- In-game donation: one standard package up to the prize limit; packages are not combined to exhaust the remainder.

@@ -1,6 +1,6 @@
 {
   "name": "sovara-gift",
-  "version": "1.5.0",
+  "version": "1.5.3",
   "private": true,
   "description": "SOVARA GIFT production web app with persistent sessions, admin audit, backups, round controls, EventSub chat and watchtime",
   "main": "server.js",
