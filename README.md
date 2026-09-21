@@ -1,8 +1,8 @@
-# SOVARA GIFT v1.5.5
+# SOVARA GIFT v1.5.6
 
 Production package for `gift.sovara.ru`.
 
-## v1.5.5
+## v1.5.6
 - Approved tabbed admin layout: Users / Giveaway / Points / System / Audit.
 - Admin user list has search, filters and pagination for large participant counts.
 - Audit log no longer has its own forced scrollbar; events expand with “Show more”.
@@ -21,3 +21,6 @@ Production package for `gift.sovara.ru`.
 - `README.md`
 
 Runtime state, backups, sessions and Twitch credentials remain outside GitHub on the VPS.
+
+
+v1.5.6: follower-gated database admission and header points/tickets counter.
