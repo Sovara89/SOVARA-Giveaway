@@ -1,17 +1,16 @@
-# SOVARA GIFT v1.5.8
+# SOVARA GIFT v1.6.0
 
 Production package for `gift.sovara.ru`.
 
-## v1.5.8
-- Approved tabbed admin layout: Users / Giveaway / Points / System / Audit.
-- Admin user list has search, filters and pagination for large participant counts.
-- Audit log no longer has its own forced scrollbar; events expand with “Show more”.
-- Steam game and in-game donation terms appear only when those prize types are selected.
-- Steam game / in-game donation require explicit terms acceptance before profile save; backend enforces the same rule.
-- Steam balance and Ozon do not require a terms checkbox.
-- Prize choice can be changed while profile editing is open for the round.
-- Partial profile saving from v1.5.2 remains supported for ordinary fields; restricted prize types require terms acceptance.
-- Version output is unified across package, API and startup log.
+## v1.6.0 — DB-first public site
+- Public `/api/status` and `/api/participants` read only local persisted state. They never call Twitch.
+- Guest, logged-in viewer and admin therefore receive the same participant/ticket snapshot.
+- Twitch follower synchronization runs in the background every 10 minutes and persists Follow state into the local database.
+- EventSub updates new follows immediately. Full periodic sync catches unfollows.
+- Chat/watchtime admission still requires confirmed Follow before a new viewer is added.
+- The web server starts immediately from local state even if Twitch is slow or unavailable. Twitch services restore asynchronously.
+- Twitch Client ID settings remain owner-only.
+- Header points/tickets counter remains enabled for logged-in viewers.
 
 ## Production files
 - `server.js`
@@ -21,18 +20,3 @@ Production package for `gift.sovara.ru`.
 - `README.md`
 
 Runtime state, backups, sessions and Twitch credentials remain outside GitHub on the VPS.
-
-
-v1.5.8: follower-gated database admission and header points/tickets counter.
-
-
-## v1.5.8 follow migration hotfix
-- Legacy users remain visible with their existing points/tickets.
-- Follow is tri-state: confirmed / no follow / not checked.
-- Header always shows points and tickets; Follow is a separate status.
-- New chat/watchtime users still require confirmed Follow before entering the database.
-
-
-## v1.5.8
-- Public status/participants now wait for the current follower cache before counting eligible users.
-- Public live counters refresh every 30 seconds so guests and admins see the same participant state.

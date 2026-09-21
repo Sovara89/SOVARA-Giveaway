@@ -1,6 +1,6 @@
 {
   "name": "sovara-gift",
-  "version": "1.5.8",
+  "version": "1.6.0",
   "private": true,
   "description": "SOVARA GIFT production web app with Twitch auth, tabbed admin, persistent sessions and recurring giveaway lifecycle",
   "main": "server.js",
