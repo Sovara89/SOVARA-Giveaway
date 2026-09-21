@@ -1,8 +1,8 @@
-# SOVARA GIFT v1.5.6
+# SOVARA GIFT v1.5.7
 
 Production package for `gift.sovara.ru`.
 
-## v1.5.6
+## v1.5.7
 - Approved tabbed admin layout: Users / Giveaway / Points / System / Audit.
 - Admin user list has search, filters and pagination for large participant counts.
 - Audit log no longer has its own forced scrollbar; events expand with “Show more”.
@@ -23,4 +23,11 @@ Production package for `gift.sovara.ru`.
 Runtime state, backups, sessions and Twitch credentials remain outside GitHub on the VPS.
 
 
-v1.5.6: follower-gated database admission and header points/tickets counter.
+v1.5.7: follower-gated database admission and header points/tickets counter.
+
+
+## v1.5.7 follow migration hotfix
+- Legacy users remain visible with their existing points/tickets.
+- Follow is tri-state: confirmed / no follow / not checked.
+- Header always shows points and tickets; Follow is a separate status.
+- New chat/watchtime users still require confirmed Follow before entering the database.
