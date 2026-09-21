@@ -1,4 +1,4 @@
-# SOVARA GIFT v1.6.0
+# SOVARA GIFT v1.6.1
 
 Production package for `gift.sovara.ru`.
 
@@ -20,3 +20,8 @@ Production package for `gift.sovara.ru`.
 - `README.md`
 
 Runtime state, backups, sessions and Twitch credentials remain outside GitHub on the VPS.
+
+
+## v1.6.1
+- Fixed anonymous `/api/status`: guest requests no longer dereference a missing session after follower cache loads.
+- Public giveaway/participant counts remain DB-first and identical for guests, users and admins.
